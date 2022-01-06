@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Equipment Manager</title>
+        <link rel="stylesheet" href="css/update.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javaScript" src="js/validate.js"></script>
+    </head>
+    <body>
+        <header>
+            <img src="images/equipmentIcon.jfif" alt="Equipment Manager">
+            <h1>Equipment Manager</h1>
+            <h2>Add Record</h2>
+            <nav>
+                <a href="index.html">Search Records</a> | 
+                <a href="addRecord.html">Add Record</a>
+            </nav>
+        </header>
+
+        <main>
+            <p>
+                <table>
+                    <form method="get" class="validate" action="php/addRow.php" id="addRecord" onsubmit="return validate()">
+                        <tr><th>Serial Number:</th>
+                        <td><input type="text" name="serialNumber" id="serialNumber" onkeyup="SNExists(this.value)">
+                        <br/> Serial Number exists? <span id="SNExists"></span> </td></tr>
+                        <tr><th> Computer Name:</th>
+                        <td><input type="text" name="cmpName" id="cmpName"></td></tr>
+                        <tr><th> Owner: </th>
+                        <td><input type="text" name="Lname" id="Lname"></td></tr>
+                        <tr><th> Room Number: </th>
+                        <td><input type="text" name="RmNum" id="RmNum"></td></tr>
+                        <tr><th> Asset Type: </th>
+                        <td><input type="text" name="Asset" id="Asset"></td></tr>
+                        <tr><th> Allocation: </th>
+                        <td><input type="text" name="Allocation" id="Allocation"></td></tr>
+                        <tr><th> Make: </th>
+                        <td><input type="text" name="Make" id="Make"></td></tr>
+                        <tr><th> Model: </th>
+                        <td><input type="text" name="Model" id="Model"></td></tr>
+                        <tr><th> Purchase Date (MM/DD/YYYY): </th>
+                        <td><input type="text" name="PurchaseDate" id="PurchaseDate"></td></tr>
+                        <tr><th> Replacement: </th>
+                        <td><input type="text" name="Repl" id="Repl"></td></tr>
+                        <tr><th> Replacement Year (Fiscal Year) in format: YY </th>
+                        <td><input type="text" name="ReplYr" id="ReplYr"></td></tr>
+                        <tr><th> Cost: </th>
+                        <td><input type="text" name="Amount" id="Amount"></td></tr>
+                        <tr><th></th>
+                        <td><input class="submit" type="submit" value="SUBMIT"></td>
+                    </form>
+                </table>
+            </p>
+        </main>
+    </body>
+    <script>
+        function SNExists(str) {
+            if (str.length == 0) {
+                document.getElementById("SNExists").innerHTML = "";
+                return;
+            } else {
+                const xmlhttp = new XMLHttpRequest();
+                xmlhttp.onload = function() {
+                    document.getElementById("SNExists").innerHTML = this.responseText;
+                }
+                xmlhttp.open("GET", "php/serialExists.php?serial=" + str);
+                xmlhttp.send();
+            }
+        }
+    </script>
+</html>

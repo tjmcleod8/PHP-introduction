@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Equipment Manager</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <img src="images/equipmentIcon.jfif" alt="Equipment Manager">
+            <h1>Equipment Manager</h1>
+            <h2>Search Records</h2>
+            <nav>
+                <a href="index.html">Search Records</a> | 
+                <a href="addRecord.html">Add Record</a>
+            </nav>
+        </header>
+
+        <main>
+            <form onchange=querySelection()>
+                Search Equipment by: <select id="selection" name="query">
+                        <option>Serial Number</option>
+                        <option>Computer Name</option>
+                        <option>Owner</option>
+                        <option>Room</option>
+                        <option>Asset Type</option>
+                        <option>Allocation</option>
+                        <option>Make</option>
+                        <option>Model</option>
+                        <option>Year Purchased</option>
+                        <option>Replacement</option>
+                        <option>Replacement Year</option>
+                        <option>Cost</option>
+                    </select>
+            </form>
+            <br/><br/>
+            <p>
+                <form method="get" action="php/querySelection.php" id="Serial">
+                    Enter Serial Number:
+                    <input type="text" name="serialNumber" id="serialNumber">
+                    <input class="submit" type="submit" value="SUBMIT">
+                </form>
+            </p>
+            <p>
+                <form method="get" action="php/querySelection.php" id="Computer">
+                    Enter Computer Name:
+                    <input type="text" name="cmpName" id="cmpName">
+                    <input class="submit" type="submit" value="SUBMIT">
+                </form>
+            </p>
+            <p>
+                <form method="get" action="php/querySelection.php" id="Owner">
+                    Enter Last Name of Owner:
+                    <input type="text" name="Lname" id="Lname">
+                    <input class="submit" type="submit" value="SUBMIT">
+                </form>
+            </p>
+            <p>
+                <form method="get" action="php/querySelection.php" id="Room">
+                    Enter Room Number:
+                    <input type="text" name="RmNum" id="RmNum">
+                    <input class="submit" type="submit" value="SUBMIT">
+                </form>
+            </p>
+            <p>
+                <form method="get" action="php/querySelection.php" id="AssetType">
+                    Enter Asset Type:
+                    <input type="text" name="Asset" id="Asset">
+                    <input class="submit" type="submit" value="SUBMIT">
+                </form>
+            </p>
+            <p>
+                <form method="get" action="php/querySelection.php" id="Allo">
+                    Enter Allocation:
+                    <input type="text" name="Allocation" id="Allocation">
+                    <input class="submit" type="submit" value="SUBMIT">
+                </form>
+            </p>
+            <p>
+                <form method="get" action="php/querySelection.php" id="MakeForm">
+                    Enter Make:
+                    <input type="text" name="Make" id="Make">
+                    <input class="submit" type="submit" value="SUBMIT">
+                </form>
+            </p>
+            <p>
+                <form method="get" action="php/querySelection.php" id="ModelForm">
+                    Enter Model:
+                    <input type="text" name="Model" id="Model">
+                    <input class="submit" type="submit" value="SUBMIT">
+                </form>
+            </p>
+            <p>
+                <form method="get" action="php/querySelection.php" id="Year">
+                    Enter Year of Purchase Date (YYYY):
+                    <input type="text" name="PurchaseDate" id="PurchaseDate">
+                    <input class="submit" type="submit" value="SUBMIT">
+                </form>
+            </p>
+            <p>
+                <form method="get" action="php/querySelection.php" id="Replacement">
+                    Enter Replacement:
+                    <input type="text" name="Repl" id="repl">
+                    <input class="submit" type="submit" value="SUBMIT">
+                </form>
+            </p>
+            <p>
+                <form method="get" action="php/querySelection.php" id="ReplacementYear">
+                    Enter Replacement Year (YY):
+                    <input type="text" name="ReplYr" id="ReaplYr">
+                    <input class="submit" type="submit" value="SUBMIT">
+                </form>
+            </p>
+            <p>
+                <form method="get" action="php/querySelection.php" id="Amount">
+                    Enter Minimum Cost:
+                    <input type="text" name="AmountMin" id="AmountMin">
+                    <br/> Enter Maximum Cost:
+                    <input type="text" name="AmountMax" id="AmountMax">
+                    <br/>
+                    <input class="submit" type="submit" value="SUBMIT">
+                </form>
+            </p>
+        </main>
+        <script type="text/javaScript" src="js/script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,122 @@
+body{
+    background-color: rebeccapurple;
+    color: white;
+}
+
+header{
+    background-color: #372554;
+    margin: 0%;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-bottom: 1%;
+}
+
+h1{
+    font-family: 'Courier New', 'Courier', 'monospace';
+    font-size: 2em;
+    text-align: center;
+}
+
+h2{
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', 'sans-serif';
+    font-size: 1.5em;
+    text-align: center;
+    clear: both;
+    color: #A2A0A6;
+}
+
+h3{
+    clear: both;
+}
+
+input[type=text]{
+    width:20%;
+    border:2px solid #aaa;
+    border-radius:2px;
+    margin:4px 0;
+    outline:none;
+    padding:4px;
+    box-sizing:border-box;
+    transition:.3s;
+}
+  
+input[type=text]:focus{
+    border-color:#372554;
+    box-shadow:0 0 8px 0 #372554;
+}
+
+table{
+    border: solid 1px #372554;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font: normal 13px Arial, sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table tr th{
+    background-color: #372554;
+    border: solid 1px #372554;
+    color: #ffffff;
+    padding: 10px;
+    text-align: left;
+    text-shadow: 1px #fff;
+}
+
+table tr td {
+    border: solid 1px #372554;
+    color: #333;
+    padding: 10px;
+    text-shadow: 1px 1px 1px #fff;
+}
+
+.php{
+    background-color: #ffffff;
+}
+
+header nav{
+    text-align: center;
+    font-weight: bold;
+    color: black;
+}
+
+header nav a{
+    text-decoration: none;
+    color: white;
+}
+
+img{
+    border-radius: 5px;
+    width: 30%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 5px;
+}
+
+.submit{
+    display:inline-block;
+    padding:0.35em 1.2em;
+    border:0.1em solid #FFFFFF;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#000000;
+    background-color: #ffffff;
+    text-align:center;
+    transition: all 0.2s;
+}
+.submit:hover{
+    color:#ffffff;
+    background-color:#372554;
+}
+
+@media all and (max-width:30em){
+    .submit{
+    display:block;
+    margin:0.4em auto;
+    }
+}
